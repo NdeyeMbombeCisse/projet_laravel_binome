@@ -20,4 +20,9 @@ class ArticleController extends Controller
         $articles=Article::all();
         return view('Articles.afficher',compact('articles'));
     }
+    public function supprimer_article($id){
+        $article=Article::find($id);
+        $article->delete();
+        return redirect()->back();
+    }
 }

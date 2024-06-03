@@ -15,14 +15,14 @@
                 <img src="{{ $article->url_img }}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{ $article->nom}}</h5>
-                    <p class="card-text">{{ $article->desc}}</p>
-                    <p class="card-text">{{ $article->cathegorie}}</p>
-                    <p class="card-text">{{ $article->statut}}</p>
-                    <p class="card-text">{{ $article->localisation}}</p>
-                    <p class="card-text">{{ $article->date}}</p>
+                    <p class="card-text">{{ Str::limit ($article->desc,30)}}</p>
+                    <p class="card-text">cathegorie: {{ $article->cathegorie}}</p>
+                    <p class="card-text"> Statut:{{ $article->statut}}</p>
+                    <p class="card-text">Localisation:{{ $article->localisation}}</p>
+                    <p class="card-text">Date publication:{{ $article->date}}</p>
                     <div class="d-flex">
                         <a href="#" class="btn btn-primary">voir detail</a>
-                        <a href="#" class="btn btn-danger ms-auto">supprimer</a>
+                        <a href="supprimer/{{ $article->id}}" class="btn btn-danger ms-auto">supprimer</a>
                         <a href="#" class="btn btn-primary">Modifier</a>
                     </div>
                 </div>
