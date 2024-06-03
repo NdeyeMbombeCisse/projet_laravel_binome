@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Commentaire;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -37,8 +39,14 @@ class ArticleController extends Controller
         return redirect('afficher_article');    
 }
   public function detail_article($id){
+    $user=User::find($id);
     $article=Article::find($id);
-    return  view('Articles.detail',compact('article'));
+    return  view('Articles.detail',compact('article','user'));
+  }
+
+  public function sauvegarder_commentaire(Request $request){
+    Commentaire::create($request->all());
+    return redirect()->back();
   }
 
 
