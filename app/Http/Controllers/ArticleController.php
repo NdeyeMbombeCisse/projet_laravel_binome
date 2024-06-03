@@ -25,4 +25,21 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->back();
     }
+    public function modifier_article ($id){
+        $article=Article::find($id);
+        return view('Articles.modifier',compact('article'));
+    }
+    
+
+    public function sauvegarder_modification(Request $request, $id) {
+        $article = Article::find($id);
+        $article->update($request->all());
+        return redirect('afficher_article');    
+}
+  public function detail_article($id){
+    $article=Article::find($id);
+    return  view('Articles.detail',compact('article'));
+  }
+
+
 }

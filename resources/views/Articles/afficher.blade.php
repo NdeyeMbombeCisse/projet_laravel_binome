@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Liste  des biens immobilier</h1>
+    <h1 class="text-center mb-5">Liste  des biens immobilier</h1>
     <div class="row">
         @foreach ($articles as $article)
         <div class="col-md-3">
@@ -21,9 +21,9 @@
                     <p class="card-text">Localisation:{{ $article->localisation}}</p>
                     <p class="card-text">Date publication:{{ $article->date}}</p>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-primary">voir detail</a>
+                        <a href="detail/{{ $article->id}}" class="btn btn-primary">voir detail</a>
                         <a href="supprimer/{{ $article->id}}" class="btn btn-danger ms-auto">supprimer</a>
-                        <a href="#" class="btn btn-primary">Modifier</a>
+                        <a href="modifier/{{ $article->id}}" class="btn btn-primary">Modifier</a>
                     </div>
                 </div>
             </div>

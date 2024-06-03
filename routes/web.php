@@ -11,4 +11,10 @@ Route::get('ajouter_article',[ArticleController::class,'ajouter_article']);
 Route::post('sauvegarder_article',[ArticleController::class,'sauvegarder_article']);
 Route::get('afficher_article',[ArticleController::class,'afficher_article']);
 Route::get('supprimer/{id}',[ArticleController::class,'supprimer_article']);
+Route::get('modifier/{id}',[ArticleController::class,'modifier_article']);
+Route::post('modifier/{id}',[ArticleController::class,'sauvegarder_modification']);
+Route::get('detail/{id}',[ArticleController::class,'detail_article']);
+
+
+
 
