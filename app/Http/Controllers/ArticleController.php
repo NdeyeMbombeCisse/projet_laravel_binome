@@ -15,4 +15,9 @@ class ArticleController extends Controller
         Article::create($request->all());
         return redirect()->back();
     }
+
+    public function afficher_article(){
+        $articles=Article::all();
+        return view('Articles.afficher',compact('articles'));
+    }
 }
