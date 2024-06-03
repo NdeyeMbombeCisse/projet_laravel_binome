@@ -39,13 +39,22 @@ class ArticleController extends Controller
         return redirect('afficher_article');    
 }
   public function detail_article($id){
+   
     $user=User::find($id);
     $article=Article::find($id);
-    return  view('Articles.detail',compact('article','user'));
+    $commentaires = $article->commentaires; 
+    $commentaires = $user->commentaires; 
+    return  view('Articles.detail',compact('article','user','commentaires'));
   }
 
   public function sauvegarder_commentaire(Request $request){
     Commentaire::create($request->all());
+    return redirect()->back();
+  }
+
+  public function supprimer_commentaire($id){
+    $commentaire=Commentaire::find($id);
+    $commentaire->delete();
     return redirect()->back();
   }
 

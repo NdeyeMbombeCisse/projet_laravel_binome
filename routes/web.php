@@ -15,6 +15,8 @@ Route::get('modifier/{id}',[ArticleController::class,'modifier_article']);
 Route::post('modifier/{id}',[ArticleController::class,'sauvegarder_modification']);
 Route::get('detail/{id}',[ArticleController::class,'detail_article']);
 Route::post('/ajouter_commentaire',[ArticleController::class,'sauvegarder_commentaire']);
+Route::get('/supprimer_commentaire/{id}',[ArticleController::class,'supprimer_commentaire']);
+
 
 
 
