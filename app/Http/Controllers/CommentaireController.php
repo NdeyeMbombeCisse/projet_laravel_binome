@@ -18,6 +18,11 @@ class CommentaireController extends Controller
      }
    
      public function enregistrer_commentaire(Request $request,$id){
+      $request->validate([
+        'contenu'=>'required',
+        'date'=>'required',
+
+      ]);
       $commentaire = Commentaire::find($id);
       $commentaire->update($request->all());
         return redirect('detail/'.$commentaire->article_id);

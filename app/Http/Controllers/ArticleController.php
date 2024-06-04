@@ -26,7 +26,7 @@ class ArticleController extends Controller
         ]);
         
         Article::create($request->all());
-        return redirect()->back();
+        return redirect('afficher_article');
     }
 
     public function afficher_article(){

@@ -16,8 +16,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $article->nom}}</h5>
                     <p class="card-text">{{ Str::limit ($article->desc,30)}}</p>
-                    <p class="card-text">cathegorie: {{ $article->cathegorie}}</p>
-                    <p class="card-text"> Statut:{{ $article->statut}}</p>
+                    {{-- <p class="card-text">cathegorie: {{ $article->cathegorie}}</p> --}}
+                    {{-- <p class="card-text"> Statut:{{ $article->statut}}</p> --}}
                     <p class="card-text">Localisation:{{ $article->localisation}}</p>
                     <p class="card-text">Date publication:{{ $article->date}}</p>
                     <div class="d-flex">
