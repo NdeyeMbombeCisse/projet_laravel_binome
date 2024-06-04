@@ -34,7 +34,7 @@
 
     <a href="#" onclick="document.getElementById('logout-form').submit()"><form action="logout" method="POST" id="logout-form">@csrf</form>Se deconnecter</a>
 
-    <a href="ajouter_article" class="btn btn-primary">Ajouter</a>
+    <a href="login" class="btn btn-primary">Ajouter</a>
 
     
     

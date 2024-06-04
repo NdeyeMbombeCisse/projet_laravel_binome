@@ -60,11 +60,9 @@ class ArticleController extends Controller
         return redirect('afficher_article');    
 }
   public function detail_article($id){
-    $user=User::find($id);
     $article=Article::find($id);
     $commentaires = $article->commentaires; 
-    $commentaires = $user->commentaires; 
-    return  view('Articles.detail',compact('article','user','commentaires'));
+    return  view('Articles.detail',compact('article','commentaires'));
   }
 
   public function sauvegarder_commentaire(Request $request){

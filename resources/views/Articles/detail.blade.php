@@ -30,7 +30,10 @@
       <form class="container" action="/ajouter_commentaire" method="POST">
         @csrf
         <input type="hidden" name="article_id" value="{{ $article->id}}">
-        <input type="hidden" name="user_id" value="{{ $user->id}}">
+        <div class="mb-3">
+          <label for="auteur" class="form-label">auteur</label>
+          <input type="text" class="form-control" id="auteur"  name="auteur">
+        </div>
         <div class="mb-3">
           <label for="contenu" class="form-label">comentez</label>
           <input type="text" class="form-control" id="contenu"  name="contenu">
@@ -47,7 +50,7 @@
       <div class="card w-75 mb-3  container">
       
         <div class="card-body">
-          <h5 class="card-title">{{ $user->name }}</h5>
+          <h5 class="card-title">{{ $commentaire->auteur }}</h5>
           
           <p class="card-text">{{ $commentaire->contenu }}</p>
           <p class="card-text">{{ $commentaire->date }}</p>
