@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      {{-- <a href="afficher_article" class="btn btn-primary">Modifier</a> --}}
+      <a href="../afficher_article" class="btn btn-primary">voir liste</a>
       <h1 class="text-center">Ecrivez-nous</h1>
       <form class="container" action="/ajouter_commentaire" method="POST">
         @csrf
@@ -45,16 +45,20 @@
       <h1 class="text-center">Vos commentaires</h1>
       @foreach ($commentaires as $commentaire )
       <div class="card w-75 mb-3  container">
+      
         <div class="card-body">
           <h5 class="card-title">{{ $user->name }}</h5>
+          
           <p class="card-text">{{ $commentaire->contenu }}</p>
           <p class="card-text">{{ $commentaire->date }}</p>
+          <a href="/modification/{{ $commentaire->id }}" class="btn btn-primary">Modifier</a>
           <a href="/supprimer_commentaire/{{ $commentaire->id }}" class="btn btn-danger">Supprimer</a>
-          <a href="#" class="btn btn-primary">Modifier</a>
-
+         
         </div>
+        
       </div>
       @endforeach
+     
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>

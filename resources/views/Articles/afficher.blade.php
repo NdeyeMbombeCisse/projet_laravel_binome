@@ -30,6 +30,8 @@
         </div>
         @endforeach
     </div>
+    <a href="ajouter_article" class="btn btn-primary">Ajouter</a>
+
     
     
 
