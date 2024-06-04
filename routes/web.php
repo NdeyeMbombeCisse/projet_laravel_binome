@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CommentaireController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 
 Route::get('/', function () {
@@ -23,7 +24,14 @@ Route::post('modification/{id}',[CommentaireController::class,'enregistrer_comme
 
 
 
+Route::get('/register',[ArticleController::class,'creer'])->name('register');
+Route::post('/register',[ArticleController::class,'enregistrer'])->name('register.store');
 
+
+
+Route::get('login',[AuthController::class,'login'])->name('login');
+Route::post('authentification',[AuthController::class,'authentification'])->name('authentification');
+Route::post('logout',[AuthController::class,'logout'])->name('logout');
 
 
 

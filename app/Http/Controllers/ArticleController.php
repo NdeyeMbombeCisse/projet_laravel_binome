@@ -77,7 +77,21 @@ class ArticleController extends Controller
     $commentaire->delete();
     return redirect()->back();
   }
+      // Partie Authentification
+  
+    public function creer()
+    {
+      return view('Auth.register');
+    } 
 
- 
 
+    public function enregistrer(Request $request)
+    {
+        $user= User::create($request->all());
+
+
+        auth()->login($user);
+     return redirect("afficher_article");
+
+     }
 }
