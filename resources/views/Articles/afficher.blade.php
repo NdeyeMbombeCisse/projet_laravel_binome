@@ -30,6 +30,8 @@
         </div>
         @endforeach
     </div>
+
+    <a href="#" onclick="document.getElementById('logout-form').submit()"><form action="logout" method="POST" id="logout-form">@csrf</form>Se deconnecter</a>
     
     
 

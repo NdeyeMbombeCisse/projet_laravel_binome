@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,7 +19,14 @@ Route::post('/ajouter_commentaire',[ArticleController::class,'sauvegarder_commen
 Route::get('/supprimer_commentaire/{id}',[ArticleController::class,'supprimer_commentaire']);
 
 
+Route::get('/register',[ArticleController::class,'creer'])->name('register');
+Route::post('/register',[ArticleController::class,'enregistrer'])->name('register.store');
 
+
+
+Route::get('login',[AuthController::class,'login'])->name('login');
+Route::post('authentification',[AuthController::class,'authentification'])->name('authentification');
+Route::post('logout',[AuthController::class,'logout'])->name('logout');
 
 
 
