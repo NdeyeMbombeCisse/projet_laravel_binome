@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\Commentaire;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class ArticleController extends Controller
 {
@@ -14,6 +15,16 @@ class ArticleController extends Controller
     }
 
     public function sauvegarder_article(Request $request){
+        $request->validate([
+            'nom'=>'required',
+            'desc'=>'required',
+            'cathegorie'=>'required',
+            'date'=>'required',
+            'statut'=>'required',
+            'localisation'=>'required',
+            'url_img'=>'required',
+        ]);
+        
         Article::create($request->all());
         return redirect()->back();
     }
@@ -34,12 +45,21 @@ class ArticleController extends Controller
     
 
     public function sauvegarder_modification(Request $request, $id) {
+
+        $request->validate([
+            'nom'=>'required',
+            'desc'=>'required',
+            'cathegorie'=>'required',
+            'date'=>'required',
+            'statut'=>'required',
+            'localisation'=>'required',
+            'url_img'=>'required',
+        ]);
         $article = Article::find($id);
         $article->update($request->all());
         return redirect('afficher_article');    
 }
   public function detail_article($id){
-   
     $user=User::find($id);
     $article=Article::find($id);
     $commentaires = $article->commentaires; 
@@ -64,9 +84,11 @@ class ArticleController extends Controller
       return view('Auth.register');
     } 
 
+
     public function enregistrer(Request $request)
     {
         $user= User::create($request->all());
+
 
         auth()->login($user);
      return redirect("afficher_article");
