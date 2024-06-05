@@ -12,7 +12,10 @@
       <form class="container" action="{{ url('modification/'.$commentaire->id) }}" method="POST">
         @csrf
         <input type="hidden" name="article_id" value="{{ $commentaire->article_id}}">
-        <input type="hidden" name="user_id" value="{{ $commentaire->user_id}}">
+        <div class="mb-3">
+          <label for="contenu" class="form-label">commentez</label>
+          <input type="text" class="form-control" id="contenu"  name="contenu"  value="{{ $commentaire->auteur}}">
+        </div>
         <div class="mb-3">
           <label for="contenu" class="form-label">commentez</label>
           <input type="text" class="form-control" id="contenu"  name="contenu"  value="{{ $commentaire->contenu}}">

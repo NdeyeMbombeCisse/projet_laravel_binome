@@ -21,6 +21,7 @@ class CommentaireController extends Controller
       $request->validate([
         'contenu'=>'required',
         'date'=>'required',
+        'auteur'=>'required',
 
       ]);
       $commentaire = Commentaire::find($id);

@@ -11,17 +11,19 @@
         background-image: url('https://i.pinimg.com/564x/fc/30/ab/fc30abff75de4f30a66bcfbe8245cf46.jpg'); /* Remplacez par l'URL de votre image */
         background-size: cover;
         background-position: center;
-        height: 500px;
+        height: 800px;
         position: relative;
       }
       .banner-content {
         position: absolute;
         text-align: center;
         left: 0;
+        margin-top:200px; 
         width: 100%;
-        background: rgba(0, 0, 0, 0.2); 
         color: white;
         padding: 20px;
+        color: rgb(239, 237, 233);
+        font-size: 30px;
         
       }
       .bd-placeholder-img {
@@ -74,9 +76,15 @@
             </svg>
             <strong>Mbombe & Babou'Agent immobilier</strong>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <div> 
+            @auth
+            <a href="#" class="btn btn-danger m-3" onclick="document.getElementById('logout-form').submit()"><form action="logout" method="POST" id="logout-form">@csrf</form>Se deconnecter</a>
+            <a href="ajouter_article" class="btn btn-primary">Ajouter</a>
+            @endauth 
+            @guest
+            <a href="login" class="btn btn-primary">Se connecter</a>
+            @endguest
+        </div>
         </div>
       </div>
       <div class="banner-image">
@@ -151,13 +159,8 @@
         </div>
         @endforeach
     </div>
-    @auth
-    <a href="#" class="btn btn-danger" onclick="document.getElementById('logout-form').submit()"><form action="logout" method="POST" id="logout-form">@csrf</form>Se deconnecter</a>
-    <a href="ajouter_article" class="btn btn-primary">Ajouter</a>
-    @endauth
-    @guest
-    <a href="login" class="btn btn-primary">Se connecter</a>
-    @endguest
+    
+   
     <footer class="mt-5">
       <div class="container">
         <div> 

@@ -79,7 +79,7 @@ class ArticleController extends Controller
   
     public function creer()
     {
-      return view('Auth.register');
+      return view('Auths.register');
     } 
 
 

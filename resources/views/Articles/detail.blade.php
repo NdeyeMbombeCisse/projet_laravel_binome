@@ -15,12 +15,12 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Nom du bien:{{ $article->nom }}</h5>
-              <p class="card-text">{{ $article->desc }}</p>
-              <p class="card-text">Statut :{{ $article->statut}}</p>
-              <p class="card-text">Situation:{{ $article->localisation }}</p>
-              <p class="card-text"><small class="text-body-secondary"> Date de publication:{{ $article->date }}</small></p>
-              <p class="card-text"><small class="text-body-secondary"> Cathegorie:{{ $article->cathegorie }}</small></p>
+              <h5 class="card-title fs-3">Nom du bien:{{ $article->nom }}</h5>
+              <p class="card-text fs-4">{{ $article->desc }}</p>
+              <p class="card-text fs-3">Statut :{{ $article->statut}}</p>
+              <p class="card-text fs-3">Situation:{{ $article->localisation }}</p>
+              <p class="card-text fs-3"><small class="text-body-secondary"> Date de publication:{{ $article->date }}</small></p>
+              <p class="card-text fs-3"><small class="text-body-secondary"> Cathegorie:{{ $article->cathegorie }}</small></p>
             </div>
           </div>
         </div>
