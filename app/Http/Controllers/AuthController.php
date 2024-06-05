@@ -20,7 +20,7 @@ class AuthController extends Controller
 
         if(auth()->attempt($request->only('email','password')))
         {
-            return redirect('ajouter_article');
+            return redirect('afficher_article');
         }else{
             return redirect()->back()->withErrors('vous n\'etes pas autorisée à se connecter');
         }
@@ -29,7 +29,7 @@ class AuthController extends Controller
     public function logout()
     {
         auth()->logout();
-        return redirect('login');
+        return redirect('afficher_article');
 
     }
 }

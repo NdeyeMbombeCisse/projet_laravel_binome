@@ -92,4 +92,6 @@ class ArticleController extends Controller
      return redirect("afficher_article");
 
      }
+
+     
 }

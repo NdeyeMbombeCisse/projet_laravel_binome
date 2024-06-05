@@ -24,6 +24,7 @@ Route::post('modification/{id}',[CommentaireController::class,'enregistrer_comme
 
 
 
+
 Route::get('/register',[ArticleController::class,'creer'])->name('register');
 Route::post('/register',[ArticleController::class,'enregistrer'])->name('register.store');
 
