@@ -22,7 +22,7 @@ class AuthController extends Controller
         {
             return redirect('afficher_article');
         }else{
-            return redirect()->back()->withErrors('vous n\'etes pas autorisée à se connecter');
+            return redirect()->back()->withErrors('vous n\'etes pas autorisée à vous  connecter');
         }
     }
 
