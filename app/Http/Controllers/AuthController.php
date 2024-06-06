@@ -18,8 +18,8 @@ class AuthController extends Controller
             'password' =>'required'
         ],
         [
-            'email.required'=>'veuillez bien saisir un email',
-            'password.required'=>'veuillez bien saisir un password',
+            'email.required'=>'veuillez bien saisir un email valide',
+            'password.required'=>'veuillez bien saisir un password valide',
         ]
     );
 
