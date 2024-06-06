@@ -23,7 +23,18 @@ class ArticleController extends Controller
             'statut'=>'required',
             'localisation'=>'required',
             'url_img'=>'required',
-        ]);
+        ],[
+          
+            'nom.required'=>'le  nom est recquis',
+            'desc.required'=>'la  description est recquise',
+            'cathegorie.required'=>'la  cathegorie est recquise',
+            'date.required'=>'la  date est recquise',
+            'statut.required'=>'le  statut est recquis',
+            'localisation.required'=>'la  localisation est recquise',
+            'url_img.required'=>'l\'image est recquise',
+    ]
+       
+      );
         
         Article::create($request->all());
         return redirect('afficher_article');
@@ -54,7 +65,17 @@ class ArticleController extends Controller
             'statut'=>'required',
             'localisation'=>'required',
             'url_img'=>'required',
-        ]);
+        ],
+        [
+          
+          'nom.required'=>'le  nom est recquis',
+          'desc.required'=>'la  description est recquise',
+          'cathegorie.required'=>'la  cathegorie est recquise',
+          'date.required'=>'la  date est recquise',
+          'statut.required'=>'le  statut est recquis',
+          'localisation.required'=>'la  localisation est recquise',
+          'url_img.required'=>'l\'image est recquise', ]
+      );
         $article = Article::find($id);
         $article->update($request->all());
         return redirect('afficher_article');    
@@ -78,6 +99,7 @@ class ArticleController extends Controller
       // Partie Authentification
   
     public function creer()
+
     {
       return view('Auths.register');
     } 
@@ -85,6 +107,17 @@ class ArticleController extends Controller
 
     public function enregistrer(Request $request)
     {
+      $request->validate([
+        'name'=>'required|string',
+        'email'=>'required|Email',
+        'password'=>'required|string'
+
+      ],
+    [
+      'name.required'=>'le prenom et nom sont recquis',
+      'email.required'=>'le email est recquis ',
+      'password.required'=>'le password est recquis ',
+    ]);
         $user= User::create($request->all());
 
 

@@ -16,7 +16,12 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|email',
             'password' =>'required'
-        ]);
+        ],
+        [
+            'email.required'=>'veuillez bien saisir un email',
+            'password.required'=>'veuillez bien saisir un password',
+        ]
+    );
 
         if(auth()->attempt($request->only('email','password')))
         {

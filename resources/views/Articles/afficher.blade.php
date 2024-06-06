@@ -24,7 +24,12 @@
         padding: 20px;
         color: rgb(239, 237, 233);
         font-size: 30px;
+        font-weight: 700;
         
+      }
+      .banner-content h1{
+        font-weight: 700;
+
       }
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -89,18 +94,24 @@
       </div>
       <div class="banner-image">
         <div class="banner-content">
-          <h1 class="text-center">Mbombe & Babou'Agent immobilier</h1>
+          <h1 class="text-center fs-1">Mbombe & Babou'Agent immobilier</h1>
           <p class="text-center">Votre meilleur choix pour trouver votre maison de rêve.</p>
         </div>
       </div>
     </header>
+    @guest
   <div class="container mt-5">
+   
     <h1 class="text-center">A propos de nous</h1>
+   
     <div class="card mb-3" style="max-width: 2000px;">
       <div class="row g-0 ">
         <div class="col-md-4 ">
-          <img src="https://i.pinimg.com/564x/fc/30/ab/fc30abff75de4f30a66bcfbe8245cf46.jpg" class="img-fluid rounded-start" alt="...">
+          <img src="https://i.pinimg.com/564x/bd/d9/6b/bdd96bf37d70ce5b79f9c7da7a2d19ce.jpg" class="img-fluid rounded-start" alt="...">
         </div>
+        
+          
+        
         <div class="col-md-8">
           <div class="card-body">
             <p class="card-text fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
@@ -117,22 +128,15 @@
                corporis quis sequi cumque quasi debitis, error facere eius consequuntur 
                maxime blanditiisLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
                eius autem! Eveniet dolorum laborum laudantium ex, cum maiores, 
-               corporis quis sequi cumque quasi debitis, error facere eius consequuntur 
-               maxime blanditiisLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-               eius autem! Eveniet dolorum laborum laudantium ex, cum maiores, 
-               corporis quis sequi cumque quasi debitis, error facere eius consequuntur 
-               maxime blanditiis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-               eius autem! Eveniet dolorum laborum laudantium ex, cum maiores, 
-               corporis quis sequi cumque quasi debitis, error facere eius consequuntur 
-               maxime blanditiisLorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-               eius autem! Eveniet dolorum laborum laudantium ex, cum maiores, 
+               corporis quis sequi cumque quasi debitis, error facere eius consequuntur
+               
               </p>
           </div>
         </div>
       </div>
     </div>
-
   </div>
+  @endguest
     <h1 class="text-center mb-5">Liste  des biens immobilier</h1>
     <div class="row">
         @foreach ($articles as $article)
